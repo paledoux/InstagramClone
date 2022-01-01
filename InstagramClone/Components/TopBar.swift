@@ -12,11 +12,13 @@ struct TopBar: View {
         HStack{
             Image("IG logo")
             Spacer()
-            TopBarIcon(iconName: "plus.app")
-            TopBarIcon(iconName: "heart")
-            TopBarIcon(iconName: "message")
+            HStack(spacing: 20){
+                Icon(iconName: "plus.app")
+                Icon(iconName: "heart")
+                Icon(iconName: "message")
+            }
         }
-        .padding(8)
+        .padding(.horizontal, 8)
     }
 }
 

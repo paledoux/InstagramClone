@@ -14,10 +14,15 @@ struct StorieItem: View {
     var body: some View {
         VStack{
             Image(imageName)
-                .cornerRadius(50)
+                .clipShape(Circle())
+                .overlay(Circle().stroke(Color.white, lineWidth: 5))
+                .overlay(Circle().stroke(LinearGradient(colors: [Color.red, Color.blue], startPoint: UnitPoint.leading, endPoint: .trailing), lineWidth: 2))
+            
             Text(name)
                 .font(.caption2)
         }
+        .padding(.top, 4)
+        .padding(.leading, 4)
     }
 }
 
