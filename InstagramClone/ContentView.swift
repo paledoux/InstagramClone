@@ -34,11 +34,3 @@ struct ContentView_Previews: PreviewProvider {
 }
 
 
-struct PostModel: Hashable {
-    var profilImageName: String
-    var userName: String
-    var postPicturename: String
-    var numLikes: Int
-}
-
-var posts : [PostModel] = [PostModel(profilImageName: "Ruffles", userName: "Ruffles", postPicturename: "car", numLikes: 124), PostModel(profilImageName: "Ruffles", userName: "Ken", postPicturename: "postPicture2", numLikes: 12)]

@@ -13,9 +13,13 @@ struct TopBar: View {
             Image("IG logo")
             Spacer()
             HStack(spacing: 20){
+                
                 Icon(iconName: "plus.app")
                 Icon(iconName: "heart")
-                Icon(iconName: "message")
+                NavigationLink(destination: MessageView()){
+                    Icon(iconName: "message")
+                }
+                .buttonStyle(.plain)
             }
         }
         .padding(.horizontal, 8)

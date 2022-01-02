@@ -8,17 +8,16 @@
 import SwiftUI
 
 struct StorieItem: View {
-    var imageName: String
-    var name: String
+    var storie: Storie
     
     var body: some View {
         VStack{
-            Image(imageName)
+            Image(storie.imageName)
                 .clipShape(Circle())
                 .overlay(Circle().stroke(Color.white, lineWidth: 5))
                 .overlay(Circle().stroke(LinearGradient(colors: [Color.red, Color.blue], startPoint: UnitPoint.leading, endPoint: .trailing), lineWidth: 2))
             
-            Text(name)
+            Text(storie.name)
                 .font(.caption2)
         }
         .padding(.top, 4)
@@ -28,6 +27,6 @@ struct StorieItem: View {
 
 struct StorieItem_Previews: PreviewProvider {
     static var previews: some View {
-        StorieItem(imageName: "Ruffles", name: "Your Story")
+        StorieItem(storie: storiePreview)
     }
 }

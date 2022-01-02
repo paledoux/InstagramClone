@@ -30,9 +30,10 @@ struct Post: View {
             }
             .padding(6)
 
-            Image("car")
+            Image(post.postPicturename)
                 .resizable()
-                .aspectRatio(UIImage(named: post.postPicturename)!.size, contentMode: .fill)
+                .aspectRatio(contentMode: .fit)
+                
 
             
             HStack{
@@ -48,10 +49,18 @@ struct Post: View {
             }
             .padding(6)
             
-            HStack{
-                Text("\(post.numLikes) Likes")
-                    .fontWeight(.bold)
-                Spacer()
+            VStack(spacing:12){
+                HStack{
+                    Text("\(post.numLikes) Likes")
+                        .fontWeight(.bold)
+                    Spacer()
+                }
+                
+                HStack{
+                    Text("**\(post.userName)** \(post.caption)")
+                        .lineLimit(2)
+                    Spacer()
+                }
             }
             .padding(.horizontal, 6)
             
@@ -61,6 +70,6 @@ struct Post: View {
 
 struct Post_Previews: PreviewProvider {
     static var previews: some View {
-        Post(post: PostModel(profilImageName: "Ruffles", userName: "Ruffles", postPicturename: "car", numLikes: 124))
+        Post(post: postPreview)
     }
 }

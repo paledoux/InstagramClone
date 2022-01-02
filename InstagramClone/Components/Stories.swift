@@ -12,7 +12,7 @@ struct Stories: View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack(spacing: 16){
                 ForEach(stories, id: \.self) { st in
-                    StorieItem(imageName: st.imageName, name: st.name)
+                    StorieItem(storie: st)
                 }
             }
         }
@@ -26,9 +26,3 @@ struct Stories_Previews: PreviewProvider {
     }
 }
 
-struct Storie: Hashable {
-    var imageName: String
-    var name: String
-}
-
-var stories = [Storie(imageName: "Ruffles", name: "Your Story"),Storie(imageName: "Ruffles", name: "Phil"),Storie(imageName: "Ruffles", name: "Samuel"),Storie(imageName: "Ruffles", name: "Ken"),Storie(imageName: "Ruffles", name: "Laurence"),Storie(imageName: "Ruffles", name: "Lucie"),Storie(imageName: "Ruffles", name: "Jean-Francois")]
